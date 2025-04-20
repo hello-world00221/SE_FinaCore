@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.IO;
 
 
 
@@ -79,13 +80,29 @@ namespace FinaCoreIndustries
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string connectionString = "Server = localhost; Database = finacore; Uid=root; Pwd=;";
+            //Check if ALL CAPS input before anything else
+            if(!string.IsNullOrEmpty(txtUsername.Text) && txtUsername.Text == txtUsername.Text.ToUpper() &&
+                !string.IsNullOrEmpty(txtPassword.Text) && txtPassword.Text == txtPassword.Text.ToUpper())
+            {
+                lblCapsWarning.Text = "Username and Password are in ALL CAPS. Please Check you input.";
 
+                return; //Stop processing here
+            }
+            else
+            {
+                lblCapsWarning.Text = "";
+            }
+
+            //Accessing to the database
+
+            string connectionString = "Server = localhost; Database = finacore; Uid=root; Pwd=;";
             using (MySqlConnection con = new MySqlConnection(connectionString))
             {
                 try
                 {
                     con.Open();
+
+                    //Validation for the username
 
                     string validationQuery = "SELECT COUNT(*) FROM login_user WHERE username =  @username";
                     using (MySqlCommand cmd = new MySqlCommand(validationQuery, con))
@@ -106,37 +123,56 @@ namespace FinaCoreIndustries
                     }
 
 
-                    // If the username is Correct
-                    string loginquery = "SELECT  COUNT(*) FROM login_user WHERE username = @username AND password = @password";
+                    //Fetch the data of the user's firstname, lastname, username ,and password
+
+                    string loginquery = "SELECT firstname, lastname, image FROM login_user WHERE username = @username AND password = @password";
 
                     using (MySqlCommand logincmd = new MySqlCommand(loginquery, con))
                     {
                         logincmd.Parameters.AddWithValue("@username", txtUsername.Text);
                         logincmd.Parameters.AddWithValue("@password", txtPassword.Text);
 
-                        int userCount = Convert.ToInt32(logincmd.ExecuteScalar());
-
-                        if (userCount > 0)
+                        using (MySqlDataReader reader = logincmd.ExecuteReader())
                         {
-                            MessageBox.Show("Login Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            this.Hide();
-                            Form formDashboard = new Dashboard();
-                            formDashboard.ShowDialog();
-                            this.Show();
-                        }
-                        
+                            if (reader.Read())
+                            {
+                                string firstName = reader["firstname"].ToString();
+                                string lastName = reader["lastname"].ToString();
+                                string fullName = firstName + " " + lastName;
 
-                        //Clear all the fields
-                        txtUsername.Clear();
-                        txtPassword.Clear();
+                                //Get the image from the database
+                                byte[] imageBytes = reader["image"] as byte[];
+
+                                //Check if the image is existing in the database
+                                Image userImage = null;
+                                if(imageBytes != null && imageBytes.Length > 0)
+                                {
+                                    using (MemoryStream ms = new MemoryStream(imageBytes))
+                                    {
+                                        userImage = Image.FromStream(ms);
+                                    }
+                                }
+
+                                MessageBox.Show("Welcome " +  fullName  + ",  Login Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.Hide();
+                                Form formDashboard = new Dashboard(fullName ,userImage);
+                                formDashboard.ShowDialog();
+                                this.Show();
+
+                            }
+
+                            //Clear all the fields
+                            txtUsername.Clear();
+                            txtPassword.Clear();
+
+                        }
 
                     }
-                
                 }
                 catch (Exception ex)
                 {
-                MessageBox.Show("Error: " + ex.Message, "Database Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                    MessageBox.Show("Error: " + ex.Message, "Database Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
         }
 
     }
@@ -178,18 +214,6 @@ namespace FinaCoreIndustries
             
         }
 
-        private void registerAccount_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Register account?", "Question", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {
-                registerAccount RegisterAccount = new registerAccount();
-                RegisterAccount.ShowDialog();
-                
-            }
-
-        }
-
         private void txtUsername_TextChanged(object sender, EventArgs e)
         {
             txtPassword.Enabled = true;
@@ -200,5 +224,21 @@ namespace FinaCoreIndustries
             txtPassword.Enabled = true;
         }
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            txtUsername.Clear();
+            txtPassword.Clear();
+        }
+
+        private void registerAccount_Click_1(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Register account?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                registerAccount RegisterAccount = new registerAccount();
+                RegisterAccount.ShowDialog();
+
+            }
+        }
     }
 }

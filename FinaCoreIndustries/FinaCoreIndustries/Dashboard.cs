@@ -7,14 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+
 
 namespace FinaCoreIndustries
 {
     public partial class Dashboard : Form
     {
-        public Dashboard()
+        public Dashboard(string fullName, Image image)
         {
             InitializeComponent();
+            label10.Text = "Welcome " + fullName;
+
+            if (image != null )
+            {
+                picBoxUser.Image = image;
+                
+            }
             LoadOverviewDashboard();//Automatically Open the HomePage
         }
 
@@ -76,6 +85,30 @@ namespace FinaCoreIndustries
         {
             label2.Text = DateTime.Now.ToLongTimeString();
             
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            registerAccount RegisterAccount = new registerAccount();
+            RegisterAccount.TopLevel = false;
+            panel1.Controls.Add(RegisterAccount);
+            RegisterAccount.Show();
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox12_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

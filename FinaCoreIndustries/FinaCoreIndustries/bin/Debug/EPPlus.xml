@@ -17964,49 +17964,6 @@
             Any sigma fill.
             </summary>
         </member>
-        <member name="T:OfficeOpenXml.Drawing.Vml.ExcelPositionBase">
-            <summary>
-            Base class for ExcelPosition.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Drawing.Vml.ExcelPositionBase.Column">
-            <summary>
-            The column
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Drawing.Vml.ExcelPositionBase.Row">
-            <summary>
-            The row
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Drawing.Vml.ExcelPositionBase.ColumnOff">
-            <summary>
-            Column Offset in EMU
-            ss
-            EMU units   1cm         =   1/360000 
-                        1US inch    =   1/914400
-                        1pixel      =   1/9525
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Drawing.Vml.ExcelPositionBase.RowOff">
-            <summary>
-            Row Offset in EMU
-            
-            EMU units   1cm         =   1/360000 
-                        1US inch    =   1/914400
-                        1pixel      =   1/9525
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.Vml.ExcelPositionBase.Load">
-            <summary>
-            Load xml data
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.Vml.ExcelPositionBase.UpdateXml">
-            <summary>
-            Update xml data
-            </summary>
-        </member>
         <member name="T:OfficeOpenXml.Drawing.Vml.ExcelVmlDrawingBase">
             <summary>
             Drawing object used for comments
@@ -18451,37 +18408,27 @@
         </member>
         <member name="T:OfficeOpenXml.Drawing.Vml.ExcelVmlDrawingPosition">
             <summary>
-            The position of a VML drawing. Used for comments and Digital Signature Lines
+            The position of a VML drawing. Used for comments
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.Vml.ExcelVmlDrawingPosition.Row">
+            <summary>
+            Row. Zero based
             </summary>
         </member>
         <member name="P:OfficeOpenXml.Drawing.Vml.ExcelVmlDrawingPosition.RowOffset">
             <summary>
             Row offset in pixels. Zero based
-            Row Offset in EMU
-            
-            EMU units   1cm         =   1/360000 
-                        1US inch    =   1/914400
-                        1pixel      =   1/9525
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.Vml.ExcelVmlDrawingPosition.Column">
+            <summary>
+            Column. Zero based
             </summary>
         </member>
         <member name="P:OfficeOpenXml.Drawing.Vml.ExcelVmlDrawingPosition.ColumnOffset">
             <summary>
             Column offset. Zero based
-            Column Offset in EMU
-            
-            EMU units   1cm         =   1/360000 
-                        1US inch    =   1/914400
-                        1pixel      =   1/9525
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.Vml.ExcelVmlDrawingPosition.Load">
-            <summary>
-            Load xml data
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.Vml.ExcelVmlDrawingPosition.UpdateXml">
-            <summary>
-            Update xml data
             </summary>
         </member>
         <member name="T:OfficeOpenXml.Drawing.Vml.ExcelVmlDrawingSignatureLine">
@@ -24309,6 +24256,34 @@
             Position of the a drawing.
             </summary>
         </member>
+        <member name="P:OfficeOpenXml.Drawing.ExcelPosition.Column">
+            <summary>
+            The column
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.ExcelPosition.Row">
+            <summary>
+            The row
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.ExcelPosition.ColumnOff">
+            <summary>
+            Column Offset in EMU
+            ss
+            EMU units   1cm         =   1/360000 
+                        1US inch    =   1/914400
+                        1pixel      =   1/9525
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.ExcelPosition.RowOff">
+            <summary>
+            Row Offset in EMU
+            
+            EMU units   1cm         =   1/360000 
+                        1US inch    =   1/914400
+                        1pixel      =   1/9525
+            </summary>
+        </member>
         <member name="M:OfficeOpenXml.Drawing.ExcelPosition.Load">
             <summary>
             Load xml data
@@ -27347,12 +27322,7 @@
             If the function is allowed in a pivot table calculated field
             </summary>
         </member>
-        <member name="P:OfficeOpenXml.FormulaParsing.Excel.Functions.RefAndLookup.ChooseCols.IsAllowedInCalculatedPivotTableField">
-            <summary>
-            If the function is allowed in a pivot table calculated field
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.FormulaParsing.Excel.Functions.RefAndLookup.ChooseRows.IsAllowedInCalculatedPivotTableField">
+        <member name="P:OfficeOpenXml.FormulaParsing.Excel.Functions.RefAndLookup.ChooseBaseFunction.IsAllowedInCalculatedPivotTableField">
             <summary>
             If the function is allowed in a pivot table calculated field
             </summary>
@@ -30159,54 +30129,24 @@
             Intersect
             </summary>
         </member>
-        <member name="T:OfficeOpenXml.FormulaParsing.Excel.Operators.LimitedOperators">
-            <summary>
-            Limited operators
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.FormulaParsing.Excel.Operators.LimitedOperators.Equals">
-            <summary>
-            Equals
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.FormulaParsing.Excel.Operators.LimitedOperators.GreaterThan">
-            <summary>
-            Greater than
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.FormulaParsing.Excel.Operators.LimitedOperators.GreaterThanOrEqual">
-            <summary>
-            Greater than or equal
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.FormulaParsing.Excel.Operators.LimitedOperators.LessThan">
-            <summary>
-            Less than
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.FormulaParsing.Excel.Operators.LimitedOperators.LessThanOrEqual">
-            <summary>
-            Less than or equal
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.FormulaParsing.Excel.Operators.LimitedOperators.NotEqualTo">
-            <summary>
-            Not equal to
-            </summary>
-        </member>
         <member name="T:OfficeOpenXml.FormulaParsing.Excel.Operators.OperatorsDict">
             <summary>
             Operators dictionary
             </summary>
         </member>
-        <member name="M:OfficeOpenXml.FormulaParsing.Excel.Operators.OperatorsDict.#ctor">
+        <member name="M:OfficeOpenXml.FormulaParsing.Excel.Operators.OperatorsDict.#ctor(System.Boolean)">
             <summary>
             Constructor
             </summary>
         </member>
-        <member name="P:OfficeOpenXml.FormulaParsing.Excel.Operators.OperatorsDict.Instance">
+        <member name="P:OfficeOpenXml.FormulaParsing.Excel.Operators.OperatorsDict.AllOperators">
             <summary>
-            Instance of the OperatorsDict
+            AllOperators of the OperatorsDict
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.FormulaParsing.Excel.Operators.OperatorsDict.CriteriaOperators">
+            <summary>
+            AllOperators of the OperatorsDict
             </summary>
         </member>
         <member name="T:OfficeOpenXml.FormulaParsing.Excel.Operators.OperatorsEnumDict">
@@ -30221,7 +30161,7 @@
         </member>
         <member name="P:OfficeOpenXml.FormulaParsing.Excel.Operators.OperatorsEnumDict.Instance">
             <summary>
-            Instance of the OperatorsDict
+            AllOperators of the OperatorsDict
             </summary>
         </member>
         <member name="P:OfficeOpenXml.FormulaParsing.FormulaCell.wsIndex">
@@ -33962,7 +33902,7 @@
         </member>
         <member name="F:OfficeOpenXml.CompressionLevel.Level1">
             <summary>
-            Level 1, Best speen
+            Level 1, Best speed
             </summary>
         </member>
         <member name="F:OfficeOpenXml.CompressionLevel.BestSpeed">
@@ -34018,6 +33958,59 @@
         <member name="F:OfficeOpenXml.CompressionLevel.Level9">
             <summary>
             Best compression, Level 9
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.ePanePosition">
+            <summary>
+            The position of the pane.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.ePanePosition.BottomLeft">
+            <summary>
+            Bottom Left Pane.
+            Used when worksheet view has both vertical and horizontal splits.
+            Also used when the worksheet is horizontally split only, specifying this is the bottom pane.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.ePanePosition.BottomRight">
+            <summary>
+            Bottom Right Pane. 
+            This property is only used when the worksheet has both vertical and horizontal splits.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.ePanePosition.TopLeft">
+            <summary>
+            Top Left Pane.
+            Used when worksheet view has both vertical and horizontal splits.
+            Also used when the worksheet is horizontally split only, specifying this is the top pane.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.ePanePosition.TopRight">
+            <summary>
+            Top Right Pane
+            Used when the worksheet view has both vertical and horizontal splits.
+            Also used when the worksheet is vertically split only, specifying this is the right pane.
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.ePaneState">
+            <summary>
+            The state of the pane.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.ePaneState.Frozen">
+            <summary>
+            Panes are frozen, but were not split being frozen.In this state, when the panes are unfrozen again, a single pane results, with no split. In this state, the split bars are not adjustable.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.ePaneState.FrozenSplit">
+            <summary>
+            Frozen Split
+            Panes are frozen and were split before being frozen. In this state, when the panes are unfrozen again, the split remains, but is adjustable.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.ePaneState.Split">
+            <summary>
+            Panes are split, but not frozen.In this state, the split bars are adjustable by the user.
             </summary>
         </member>
         <member name="T:OfficeOpenXml.LicenseContext">
@@ -41124,7 +41117,7 @@
         </member>
         <member name="P:OfficeOpenXml.ExcelWorksheet.PivotTables">
             <summary>
-            Pivottables defined in the worksheet.
+            Pivot tables defined in the worksheet.
             </summary>
         </member>
         <member name="P:OfficeOpenXml.ExcelWorksheet.ConditionalFormatting">
@@ -41500,59 +41493,6 @@
         <member name="M:OfficeOpenXml.ExcelWorksheets.Dispose">
             <summary>
             Dispose the worksheets collection
-            </summary>
-        </member>
-        <member name="T:OfficeOpenXml.ePaneState">
-            <summary>
-            The state of the pane.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.ePaneState.Frozen">
-            <summary>
-            Panes are frozen, but were not split being frozen.In this state, when the panes are unfrozen again, a single pane results, with no split. In this state, the split bars are not adjustable.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.ePaneState.FrozenSplit">
-            <summary>
-            Frozen Split
-            Panes are frozen and were split before being frozen. In this state, when the panes are unfrozen again, the split remains, but is adjustable.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.ePaneState.Split">
-            <summary>
-            Panes are split, but not frozen.In this state, the split bars are adjustable by the user.
-            </summary>
-        </member>
-        <member name="T:OfficeOpenXml.ePanePosition">
-            <summary>
-            The position of the pane.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.ePanePosition.BottomLeft">
-            <summary>
-            Bottom Left Pane.
-            Used when worksheet view has both vertical and horizontal splits.
-            Also used when the worksheet is horizontaly split only, specifying this is the bottom pane.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.ePanePosition.BottomRight">
-            <summary>
-            Bottom Right Pane. 
-            This property is only used when the worksheet has both vertical and horizontal splits.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.ePanePosition.TopLeft">
-            <summary>
-            Top Left Pane.
-            Used when worksheet view has both vertical and horizontal splits.
-            Also used when the worksheet is horizontaly split only, specifying this is the top pane.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.ePanePosition.TopRight">
-            <summary>
-            Top Right Pane
-            Used when the worksheet view has both vertical and horizontal splits.
-            Also used when the worksheet is verticaly split only, specifying this is the right pane.
             </summary>
         </member>
         <member name="T:OfficeOpenXml.ExcelWorksheetView">
@@ -73546,6 +73486,12 @@
                 Returns a string that represents the current object.
             </summary>
             <returns>A string that represents the current object.</returns>
+        </member>
+        <member name="M:OfficeOpenXml.ThreadedComments.ExcelWorksheetThreadedComments.GetEnumerator">
+            <summary>
+            Returns the enumerator
+            </summary>
+            <returns>Returns an enumeration of <see cref="T:OfficeOpenXml.ThreadedComments.ExcelThreadedCommentThread"/></returns>
         </member>
         <member name="T:OfficeOpenXml.ThreadedComments.IdentityProvider">
             <summary>

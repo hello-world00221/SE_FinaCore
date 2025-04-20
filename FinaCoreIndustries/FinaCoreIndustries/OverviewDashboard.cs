@@ -7,9 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Oracle.ManagedDataAccess.Client;
+using MySql.Data.MySqlClient;
 using OfficeOpenXml;
 using System.IO;
+using System.Windows.Forms.DataVisualization.Charting;
+
 
 namespace FinaCoreIndustries
 {
@@ -33,7 +35,7 @@ namespace FinaCoreIndustries
                 DataTable dt = new DataTable();
                 if (dt != null && dt.Rows.Count > 0)
                 {
-                    InsertDataIntoOracle(dt);
+                    InsertDataIntoMySql(dt);
                 }
             }
         }
@@ -80,11 +82,12 @@ namespace FinaCoreIndustries
             }
         }
 
-        private void InsertDataIntoOracle(DataTable dt)
+        private void InsertDataIntoMySql(DataTable dt)
         {
-            string connectionString = "User Id=finacore;Password=finacoreindustries;Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))(CONNECT_DATA=(SID=xe)));";
+            string connectionString = "Server = localhost; Database= finacore; Uid= root; Pwd=;";
 
-            using (OracleConnection conn = new OracleConnection(connectionString))
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 try
                 {
@@ -92,34 +95,108 @@ namespace FinaCoreIndustries
 
                     foreach (DataRow row in dt.Rows)
                     {
-                        using (OracleCommand cmd = new OracleCommand(@"
-                            INSERT INTO COMPANY_CLIENTS 
-                            (CLIENT_ID, CLIENT_NAME, CLIENT_CODE, CONTACT, EMAIL, ADDRESS, STATUS, CLIENT_DATE) 
-                            VALUES (:ClientID, :ClientName, :ClientCode, :Contact, :Email, :Address, :Status, TO_DATE(:DateAdded, 'YYYY-MM-DD'))", conn))
+                        using (MySqlCommand cmd = new MySqlCommand(@"
+                            INSERT INTO company_client 
+                            (client_id, client_name, client_code, contact, email, address, status, client_date) 
+                            VALUES (@client_id, @client_name, @client_code, @contact, @email, @address, @status, @DateAdded)" , conn))
                         {
-                            cmd.Parameters.Add(":ClientID", OracleDbType.Int64).Value = row["CLIENT_ID"];
-                            cmd.Parameters.Add(":ClientName", OracleDbType.Varchar2,255).Value = row["CLIENT_NAME"];
-                            cmd.Parameters.Add(":ClientCode", OracleDbType.Varchar2,9).Value = row["CLIENT_CODE"];
-                            cmd.Parameters.Add(":Contact", OracleDbType.Varchar2,9).Value = row["CONTACT"];
-                            cmd.Parameters.Add(":Email", OracleDbType.Varchar2,255).Value = row["EMAIL"];
-                            cmd.Parameters.Add(":Address", OracleDbType.Clob).Value = row["ADDRESS"];
-                            cmd.Parameters.Add(":Status", OracleDbType.Varchar2,10).Value = row["STATUS"];
-                           
-                            if (DateTime.TryParse(row["CLIENT_DATE"].ToString(), out DateTime clientDate))
+                            cmd.Parameters.AddWithValue("@client_id",  row["client_id"]);
+                            cmd.Parameters.AddWithValue("@client_name", row["client_name"]);
+                            cmd.Parameters.AddWithValue("@client_code", row["client_code"]);
+                            cmd.Parameters.AddWithValue("@contact", row["contact"]);
+                            cmd.Parameters.AddWithValue("@email", row["email"]);
+                            cmd.Parameters.AddWithValue("@address", row["address"]);
+                            cmd.Parameters.AddWithValue("@status", row["status"]);
+                            cmd.Parameters.AddWithValue("@DateAdded", row["client_date"]);
+
+                            if (DateTime.TryParse(row["client_date"].ToString(), out DateTime clientDate))
                             {
-                                cmd.Parameters.Add(":DateAdded",OracleDbType.Date).Value = clientDate;
+                                cmd.Parameters.AddWithValue("@DateAdded", clientDate);
+                            }
+                            else
+                            {
+                                cmd.Parameters.AddWithValue("@DateAdded", DBNull.Value);
                             }
 
-                            cmd.ExecuteNonQuery();
+                                cmd.ExecuteNonQuery();
                         }
                     }
                     MessageBox.Show("Data Import Successfully");
                 }
                 catch (Exception ex) 
                 {
-                    MessageBox.Show("Database Error: " + ex.Message);
+                    MessageBox.Show("MySql Error: " + ex.Message);
                 
                 }
+            }
+        }
+
+        private void OverviewDashboard_Load(object sender, EventArgs e)
+        {
+            ViewTransactionRecords_Chart();
+        }
+
+        public void ViewTransactionRecords_Chart()
+        {
+            string connectionString = "Server = localhost; Database = finacore; Uid = root; Pwd =;";
+            string query = @"SELECT MONTH(transaction_date) AS trans_month, transaction_type, SUM(transaction_amount) AS total_amount FROM company_transactions GROUP BY trans_month, transaction_type ORDER BY trans_month, transaction_type;";
+
+
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+
+                    //Clear the previous chart data
+
+                    chart2.Series.Clear();
+                    chart2.ChartAreas.Clear();
+                    chart2.Titles.Clear();
+
+                    //SetUp Chart Area
+
+                    ChartArea chartArea = new ChartArea("MainArea");
+                    chart2.ChartAreas.Add(chartArea);
+
+                    //Get unique transaction types
+
+                    var transactionTypes = dt.AsEnumerable().Select(r => r["transaction_type"].ToString()).Distinct();
+
+
+                    //Create a series for each transaction type
+
+                    foreach (string transType in transactionTypes)
+                    {
+                        Series series = new Series(transType);
+                        series.ChartType = SeriesChartType.Column;
+
+                        //Filter the data for the transaction
+
+                        var filteredRows = dt.Select($"transaction_type = '{transType}'");
+
+                        foreach (var row in filteredRows)
+                        {
+                            int month = Convert.ToInt32(row["trans_month"]);
+                            decimal amount = Convert.ToDecimal(row["total_amount"]);
+                            series.Points.AddXY(month, amount);
+                        }
+                        chart2.Series.Add(series);
+                    }
+
+                    chart2.Titles.Add("Monthly Transactions Amount by Types");
+                    chart2.ChartAreas[0].AxisX.Title = "Month";
+                    chart2.ChartAreas[0].AxisY.Title = "Amount (₱)";
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex.Message);
             }
         }
     }

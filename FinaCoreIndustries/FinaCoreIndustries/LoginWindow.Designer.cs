@@ -38,23 +38,22 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelUsername = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panelPassword = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.picBoxHidden = new System.Windows.Forms.PictureBox();
             this.picBoxEye = new System.Windows.Forms.PictureBox();
-            this.registerAccount = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.labelUsername = new System.Windows.Forms.Label();
-            this.labelPassword = new System.Windows.Forms.Label();
+            this.lblCapsWarning = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelUsername.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panelPassword.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxHidden)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxEye)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -111,7 +110,7 @@
             this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(758, 474);
+            this.btnLogin.Location = new System.Drawing.Point(481, 460);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(115, 52);
             this.btnLogin.TabIndex = 15;
@@ -158,10 +157,20 @@
             this.panelUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.panelUsername.Controls.Add(this.pictureBox3);
             this.panelUsername.Controls.Add(this.txtUsername);
-            this.panelUsername.Location = new System.Drawing.Point(487, 252);
+            this.panelUsername.Location = new System.Drawing.Point(487, 259);
             this.panelUsername.Name = "panelUsername";
             this.panelUsername.Size = new System.Drawing.Size(386, 61);
             this.panelUsername.TabIndex = 17;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(6, 8);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(44, 44);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 18;
+            this.pictureBox3.TabStop = false;
             // 
             // panelPassword
             // 
@@ -170,15 +179,25 @@
             this.panelPassword.Controls.Add(this.picBoxHidden);
             this.panelPassword.Controls.Add(this.picBoxEye);
             this.panelPassword.Controls.Add(this.txtPassword);
-            this.panelPassword.Location = new System.Drawing.Point(487, 352);
+            this.panelPassword.Location = new System.Drawing.Point(487, 360);
             this.panelPassword.Name = "panelPassword";
             this.panelPassword.Size = new System.Drawing.Size(386, 61);
             this.panelPassword.TabIndex = 17;
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(8, 9);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(44, 44);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 18;
+            this.pictureBox4.TabStop = false;
+            // 
             // picBoxHidden
             // 
             this.picBoxHidden.Image = ((System.Drawing.Image)(resources.GetObject("picBoxHidden.Image")));
-            this.picBoxHidden.Location = new System.Drawing.Point(332, 10);
+            this.picBoxHidden.Location = new System.Drawing.Point(331, 9);
             this.picBoxHidden.Name = "picBoxHidden";
             this.picBoxHidden.Size = new System.Drawing.Size(44, 44);
             this.picBoxHidden.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -197,58 +216,28 @@
             this.picBoxEye.TabStop = false;
             this.picBoxEye.Click += new System.EventHandler(this.picBoxEye_Click_1);
             // 
-            // registerAccount
+            // lblCapsWarning
             // 
-            this.registerAccount.AutoSize = true;
-            this.registerAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.registerAccount.ForeColor = System.Drawing.Color.Blue;
-            this.registerAccount.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.registerAccount.Location = new System.Drawing.Point(489, 456);
-            this.registerAccount.Name = "registerAccount";
-            this.registerAccount.Size = new System.Drawing.Size(109, 16);
-            this.registerAccount.TabIndex = 14;
-            this.registerAccount.Text = "Register Account";
-            this.registerAccount.Click += new System.EventHandler(this.registerAccount_Click);
+            this.lblCapsWarning.AutoSize = true;
+            this.lblCapsWarning.ForeColor = System.Drawing.Color.Transparent;
+            this.lblCapsWarning.Location = new System.Drawing.Point(484, 332);
+            this.lblCapsWarning.Name = "lblCapsWarning";
+            this.lblCapsWarning.Size = new System.Drawing.Size(35, 13);
+            this.lblCapsWarning.TabIndex = 18;
+            this.lblCapsWarning.Text = "label1";
             // 
-            // pictureBox3
+            // btnCancel
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(6, 8);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(44, 44);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 18;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(8, 9);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(44, 44);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 18;
-            this.pictureBox4.TabStop = false;
-            // 
-            // labelUsername
-            // 
-            this.labelUsername.AutoSize = true;
-            this.labelUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUsername.Location = new System.Drawing.Point(492, 322);
-            this.labelUsername.Name = "labelUsername";
-            this.labelUsername.Size = new System.Drawing.Size(51, 20);
-            this.labelUsername.TabIndex = 19;
-            this.labelUsername.Text = "label2";
-            // 
-            // labelPassword
-            // 
-            this.labelPassword.AutoSize = true;
-            this.labelPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPassword.Location = new System.Drawing.Point(497, 426);
-            this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(51, 20);
-            this.labelPassword.TabIndex = 19;
-            this.labelPassword.Text = "label2";
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(758, 461);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(115, 52);
+            this.btnCancel.TabIndex = 19;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // LoginWindow
             // 
@@ -256,14 +245,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(948, 549);
-            this.Controls.Add(this.labelPassword);
-            this.Controls.Add(this.labelUsername);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.lblCapsWarning);
             this.Controls.Add(this.panelPassword);
             this.Controls.Add(this.panelUsername);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.registerAccount);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.labelWelcome);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -277,12 +265,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelUsername.ResumeLayout(false);
             this.panelUsername.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panelPassword.ResumeLayout(false);
             this.panelPassword.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxHidden)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxEye)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,11 +289,10 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox picBoxHidden;
         private System.Windows.Forms.PictureBox picBoxEye;
-        private System.Windows.Forms.Label registerAccount;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Label labelUsername;
-        private System.Windows.Forms.Label labelPassword;
+        private System.Windows.Forms.Label lblCapsWarning;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
 

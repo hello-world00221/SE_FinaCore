@@ -3,24 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\QCU\\source\\repos\\FinaCoreIndustries\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6AA450BB-4498-4EC7-ADFE-DC1A447D8770}|FinaCoreIndustries\\FinaCoreIndustries.csproj|c:\\users\\qcu\\source\\repos\\finacoreindustries\\finacoreindustries\\client_list.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AA450BB-4498-4EC7-ADFE-DC1A447D8770}|FinaCoreIndustries\\FinaCoreIndustries.csproj|solutionrelative:finacoreindustries\\client_list.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AA450BB-4498-4EC7-ADFE-DC1A447D8770}|FinaCoreIndustries\\FinaCoreIndustries.csproj|C:\\Users\\QCU\\source\\repos\\FinaCoreIndustries\\finacoreindustries\\registeraccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6AA450BB-4498-4EC7-ADFE-DC1A447D8770}|FinaCoreIndustries\\FinaCoreIndustries.csproj|solutionrelative:finacoreindustries\\registeraccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AA450BB-4498-4EC7-ADFE-DC1A447D8770}|FinaCoreIndustries\\FinaCoreIndustries.csproj|C:\\Users\\QCU\\source\\repos\\FinaCoreIndustries\\finacoreindustries\\loginwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6AA450BB-4498-4EC7-ADFE-DC1A447D8770}|FinaCoreIndustries\\FinaCoreIndustries.csproj|c:\\users\\qcu\\source\\repos\\finacoreindustries\\finacoreindustries\\loginwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6AA450BB-4498-4EC7-ADFE-DC1A447D8770}|FinaCoreIndustries\\FinaCoreIndustries.csproj|solutionrelative:finacoreindustries\\loginwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6AA450BB-4498-4EC7-ADFE-DC1A447D8770}|FinaCoreIndustries\\FinaCoreIndustries.csproj|C:\\Users\\QCU\\source\\repos\\FinaCoreIndustries\\finacoreindustries\\registeraccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AA450BB-4498-4EC7-ADFE-DC1A447D8770}|FinaCoreIndustries\\FinaCoreIndustries.csproj|solutionrelative:finacoreindustries\\registeraccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6AA450BB-4498-4EC7-ADFE-DC1A447D8770}|FinaCoreIndustries\\FinaCoreIndustries.csproj|c:\\users\\qcu\\source\\repos\\finacoreindustries\\finacoreindustries\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AA450BB-4498-4EC7-ADFE-DC1A447D8770}|FinaCoreIndustries\\FinaCoreIndustries.csproj|solutionrelative:finacoreindustries\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6AA450BB-4498-4EC7-ADFE-DC1A447D8770}|FinaCoreIndustries\\FinaCoreIndustries.csproj|C:\\Users\\QCU\\source\\repos\\FinaCoreIndustries\\finacoreindustries\\client_list.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6AA450BB-4498-4EC7-ADFE-DC1A447D8770}|FinaCoreIndustries\\FinaCoreIndustries.csproj|solutionrelative:finacoreindustries\\client_list.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{6AA450BB-4498-4EC7-ADFE-DC1A447D8770}|FinaCoreIndustries\\FinaCoreIndustries.csproj|c:\\users\\qcu\\source\\repos\\finacoreindustries\\finacoreindustries\\loginwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6AA450BB-4498-4EC7-ADFE-DC1A447D8770}|FinaCoreIndustries\\FinaCoreIndustries.csproj|solutionrelative:finacoreindustries\\loginwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AA450BB-4498-4EC7-ADFE-DC1A447D8770}|FinaCoreIndustries\\FinaCoreIndustries.csproj|c:\\users\\qcu\\source\\repos\\finacoreindustries\\finacoreindustries\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6AA450BB-4498-4EC7-ADFE-DC1A447D8770}|FinaCoreIndustries\\FinaCoreIndustries.csproj|solutionrelative:finacoreindustries\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,66 +46,53 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "registerAccount.cs",
-              "DocumentMoniker": "C:\\Users\\QCU\\source\\repos\\FinaCoreIndustries\\FinaCoreIndustries\\registerAccount.cs",
-              "RelativeDocumentMoniker": "FinaCoreIndustries\\registerAccount.cs",
-              "ToolTip": "C:\\Users\\QCU\\source\\repos\\FinaCoreIndustries\\FinaCoreIndustries\\registerAccount.cs",
-              "RelativeToolTip": "FinaCoreIndustries\\registerAccount.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAcwDYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T00:43:37.417Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "registerAccount.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\QCU\\source\\repos\\FinaCoreIndustries\\FinaCoreIndustries\\registerAccount.cs",
-              "RelativeDocumentMoniker": "FinaCoreIndustries\\registerAccount.cs",
-              "ToolTip": "C:\\Users\\QCU\\source\\repos\\FinaCoreIndustries\\FinaCoreIndustries\\registerAccount.cs [Design]",
-              "RelativeToolTip": "FinaCoreIndustries\\registerAccount.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T00:43:35.416Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Client_List.cs",
-              "DocumentMoniker": "C:\\Users\\QCU\\source\\repos\\FinaCoreIndustries\\FinaCoreIndustries\\Client_List.cs",
-              "RelativeDocumentMoniker": "FinaCoreIndustries\\Client_List.cs",
-              "ToolTip": "C:\\Users\\QCU\\source\\repos\\FinaCoreIndustries\\FinaCoreIndustries\\Client_List.cs",
-              "RelativeToolTip": "FinaCoreIndustries\\Client_List.cs",
-              "ViewState": "AgIAALAAAAAAAAAAAAAqwL8AAABTAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T00:42:54.115Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Client_List.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\QCU\\source\\repos\\FinaCoreIndustries\\FinaCoreIndustries\\Client_List.cs",
-              "RelativeDocumentMoniker": "FinaCoreIndustries\\Client_List.cs",
-              "ToolTip": "C:\\Users\\QCU\\source\\repos\\FinaCoreIndustries\\FinaCoreIndustries\\Client_List.cs [Design]",
-              "RelativeToolTip": "FinaCoreIndustries\\Client_List.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T15:48:27.386Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "LoginWindow.cs",
               "DocumentMoniker": "C:\\Users\\QCU\\source\\repos\\FinaCoreIndustries\\FinaCoreIndustries\\LoginWindow.cs",
               "RelativeDocumentMoniker": "FinaCoreIndustries\\LoginWindow.cs",
               "ToolTip": "C:\\Users\\QCU\\source\\repos\\FinaCoreIndustries\\FinaCoreIndustries\\LoginWindow.cs",
               "RelativeToolTip": "FinaCoreIndustries\\LoginWindow.cs",
-              "ViewState": "AgIAAFIAAAAAAAAAAAAIwFkAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAAJAAAAAAAAAAAAAYwJYAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T13:28:39.642Z",
+              "WhenOpened": "2025-04-19T05:46:00.552Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoginWindow.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\QCU\\source\\repos\\FinaCoreIndustries\\FinaCoreIndustries\\LoginWindow.cs",
+              "RelativeDocumentMoniker": "FinaCoreIndustries\\LoginWindow.cs",
+              "ToolTip": "C:\\Users\\QCU\\source\\repos\\FinaCoreIndustries\\FinaCoreIndustries\\LoginWindow.cs [Design]",
+              "RelativeToolTip": "FinaCoreIndustries\\LoginWindow.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T05:45:58.069Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Dashboard.cs",
+              "DocumentMoniker": "C:\\Users\\QCU\\source\\repos\\FinaCoreIndustries\\FinaCoreIndustries\\Dashboard.cs",
+              "RelativeDocumentMoniker": "FinaCoreIndustries\\Dashboard.cs",
+              "ToolTip": "C:\\Users\\QCU\\source\\repos\\FinaCoreIndustries\\FinaCoreIndustries\\Dashboard.cs",
+              "RelativeToolTip": "FinaCoreIndustries\\Dashboard.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABgAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T05:43:29.051Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Dashboard.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\QCU\\source\\repos\\FinaCoreIndustries\\FinaCoreIndustries\\Dashboard.cs",
+              "RelativeDocumentMoniker": "FinaCoreIndustries\\Dashboard.cs",
+              "ToolTip": "C:\\Users\\QCU\\source\\repos\\FinaCoreIndustries\\FinaCoreIndustries\\Dashboard.cs [Design]",
+              "RelativeToolTip": "FinaCoreIndustries\\Dashboard.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T05:43:10.76Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }
