@@ -17,7 +17,7 @@ namespace FinaCoreIndustries
         public Dashboard(string fullName, Image image)
         {
             InitializeComponent();
-            label10.Text = "Welcome " + fullName;
+            label10.Text = fullName;
 
             if (image != null )
             {
@@ -37,43 +37,6 @@ namespace FinaCoreIndustries
             overviewDashboard.Show();
         }
 
-        private void btnLogOut_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            panel1.Controls.Clear();
-            Client_List clientList = new Client_List();
-            clientList.TopLevel = false;
-            panel1.Controls.Add(clientList);
-            clientList.Show();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            panel1.Controls.Clear();
-            TransactionHistory transactionHistory = new TransactionHistory();
-            transactionHistory.TopLevel = false;
-            panel1.Controls.Add(transactionHistory);
-            transactionHistory.Show();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            panel1.Controls.Clear();
-            FinanceHistory financeHistory = new FinanceHistory();
-            financeHistory.TopLevel = false;
-            panel1.Controls.Add(financeHistory);
-            financeHistory.Show();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            LoadOverviewDashboard();
-        }
-
         private void Dashboard_Load(object sender, EventArgs e)
         {
             label1.Text = DateTime.Now.ToLongDateString();
@@ -87,7 +50,39 @@ namespace FinaCoreIndustries
             
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void Home_Click(object sender, EventArgs e)
+        {
+            LoadOverviewDashboard();
+        }
+
+        private void Transactions_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            Client_List clientList = new Client_List();
+            clientList.TopLevel = false;
+            panel1.Controls.Add(clientList);
+            clientList.Show();
+        }
+
+        private void Records_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            TransactionHistory transactionHistory = new TransactionHistory();
+            transactionHistory.TopLevel = false;
+            panel1.Controls.Add(transactionHistory);
+            transactionHistory.Show();
+        }
+
+        private void FHistory_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            FinanceHistory financeHistory = new FinanceHistory();
+            financeHistory.TopLevel = false;
+            panel1.Controls.Add(financeHistory);
+            financeHistory.Show();
+        }
+
+        private void regAccount_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
             registerAccount RegisterAccount = new registerAccount();
@@ -96,19 +91,10 @@ namespace FinaCoreIndustries
             RegisterAccount.Show();
         }
 
-        private void label10_Click(object sender, EventArgs e)
+        private void Logout_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox12_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

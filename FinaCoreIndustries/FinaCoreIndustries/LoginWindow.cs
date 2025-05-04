@@ -24,8 +24,6 @@ namespace FinaCoreIndustries
 
         private void LoginWindow_Load(object sender, EventArgs e)
         {
-            roundedBtn(btnLogin, 5);
-
             roundedPanel(panelUsername, 5);
             roundedPanel(panelPassword, 5);
 
@@ -36,29 +34,6 @@ namespace FinaCoreIndustries
 
             
         }
-
-
-
-
-        public static void roundedBtn(Button button, int radius)
-        {
-            if (button.Height < radius * 2) radius = button.Height / 2;
-            if (button.Width < radius * 2) radius = button.Width / 2;
-
-            GraphicsPath path = new GraphicsPath();
-            path.StartFigure();
-            path.AddArc(0, 0, radius * 2, radius * 2, 180, 90);
-            path.AddLine(radius, 0, button.Width - radius, 0);
-            path.AddArc(button.Width - radius * 2, 0, radius * 2, radius * 2, 270, 90);
-            path.AddLine(button.Width, radius, button.Width, button.Height - radius);
-            path.AddArc(button.Width - radius * 2, button.Height - radius * 2, radius * 2, radius * 2, 0, 90);
-            path.AddLine(button.Width - radius, button.Height, radius, button.Height);
-            path.AddArc(0, button.Height - radius * 2, radius * 2, radius * 2, 90, 90);
-            path.CloseFigure();
-
-            button.Region = new Region(path);
-        }
-
 
         public void roundedPanel(Panel panel, int radius)
         {
@@ -75,8 +50,6 @@ namespace FinaCoreIndustries
 
             panel.Region = new Region(path);
         }
-
-
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -176,17 +149,6 @@ namespace FinaCoreIndustries
         }
 
     }
- 
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-        }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
@@ -240,5 +202,114 @@ namespace FinaCoreIndustries
 
             }
         }
+
+        private void Login_Click(object sender, EventArgs e)
+        {
+            //Check if ALL CAPS input before anything else
+            if (!string.IsNullOrEmpty(txtUsername.Text) && txtUsername.Text == txtUsername.Text.ToUpper() &&
+                !string.IsNullOrEmpty(txtPassword.Text) && txtPassword.Text == txtPassword.Text.ToUpper())
+            {
+                lblCapsWarning.Text = "Username and Password are in ALL CAPS. Please Check you input.";
+
+                return; //Stop processing here
+            }
+            else
+            {
+                lblCapsWarning.Text = "";
+            }
+
+            //Accessing to the database
+
+            string connectionString = "Server = localhost; Database = finacore; Uid=root; Pwd=;";
+            using (MySqlConnection con = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    con.Open();
+
+                    //Validation for the username
+
+                    string validationQuery = "SELECT COUNT(*) FROM login_user WHERE username =  @username";
+                    using (MySqlCommand cmd = new MySqlCommand(validationQuery, con))
+                    {
+                        cmd.Parameters.AddWithValue("@username", txtUsername.Text);
+
+                        int userExist = Convert.ToInt32(cmd.ExecuteScalar());
+
+                        if (userExist == 0)
+                        {
+                            MessageBox.Show("Username and Password do not match, Please enter it correctly.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            //Clear all the fields
+                            txtUsername.Clear();
+                            txtPassword.Clear();
+                            txtPassword.Enabled = false; //Disabling the password until valid username
+                            return;// Stop here if the username is invalid
+                        }
+                    }
+
+
+                    //Fetch the data of the user's firstname, lastname, username ,and password
+
+                    string loginquery = "SELECT firstname, lastname, image FROM login_user WHERE username = @username AND password = @password";
+
+                    using (MySqlCommand logincmd = new MySqlCommand(loginquery, con))
+                    {
+                        logincmd.Parameters.AddWithValue("@username", txtUsername.Text);
+                        logincmd.Parameters.AddWithValue("@password", txtPassword.Text);
+
+                        using (MySqlDataReader reader = logincmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                string firstName = reader["firstname"].ToString();
+                                string lastName = reader["lastname"].ToString();
+                                string fullName = firstName + " " + lastName;
+
+                                //Get the image from the database
+                                byte[] imageBytes = reader["image"] as byte[];
+
+                                //Check if the image is existing in the database
+                                Image userImage = null;
+                                if (imageBytes != null && imageBytes.Length > 0)
+                                {
+                                    using (MemoryStream ms = new MemoryStream(imageBytes))
+                                    {
+                                        userImage = Image.FromStream(ms);
+                                    }
+                                }
+
+                                MessageBox.Show("Welcome " + fullName + ",  Login Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.Hide();
+                                Form formDashboard = new Dashboard(fullName, userImage);
+                                formDashboard.ShowDialog();
+                                this.Show();
+
+                            }
+
+                            //Clear all the fields
+                            txtUsername.Clear();
+                            txtPassword.Clear();
+
+                        }
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Database Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        // LOGIN CUSTOM BUTTON
+        private void Cancel_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+        // Cancel CUSTOM BUTTON
     }
 }

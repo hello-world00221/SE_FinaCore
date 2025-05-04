@@ -68,12 +68,13 @@
             this.btnSOA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSOA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSOA.ForeColor = System.Drawing.Color.White;
-            this.btnSOA.Location = new System.Drawing.Point(448, 54);
+            this.btnSOA.Location = new System.Drawing.Point(451, 21);
             this.btnSOA.Name = "btnSOA";
             this.btnSOA.Size = new System.Drawing.Size(134, 42);
             this.btnSOA.TabIndex = 18;
             this.btnSOA.Text = "Create SOA";
             this.btnSOA.UseVisualStyleBackColor = false;
+            this.btnSOA.Click += new System.EventHandler(this.btnSOA_Click);
             // 
             // btnImportData
             // 
@@ -81,7 +82,7 @@
             this.btnImportData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImportData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImportData.ForeColor = System.Drawing.Color.White;
-            this.btnImportData.Location = new System.Drawing.Point(602, 54);
+            this.btnImportData.Location = new System.Drawing.Point(605, 21);
             this.btnImportData.Name = "btnImportData";
             this.btnImportData.Size = new System.Drawing.Size(211, 42);
             this.btnImportData.TabIndex = 17;
@@ -94,7 +95,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(30)))), ((int)(((byte)(25)))));
-            this.label1.Location = new System.Drawing.Point(58, 65);
+            this.label1.Location = new System.Drawing.Point(45, 21);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(111, 26);
@@ -115,9 +116,9 @@
             this.panel1.Controls.Add(this.pictureBox8);
             this.panel1.Controls.Add(this.pictureBox7);
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(55, 121);
+            this.panel1.Location = new System.Drawing.Point(36, 88);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(758, 166);
+            this.panel1.Size = new System.Drawing.Size(778, 166);
             this.panel1.TabIndex = 19;
             // 
             // label11
@@ -231,7 +232,7 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.label12);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(55, 307);
+            this.panel2.Location = new System.Drawing.Point(36, 274);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(377, 134);
             this.panel2.TabIndex = 20;
@@ -254,9 +255,9 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.label13);
             this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(470, 307);
+            this.panel3.Location = new System.Drawing.Point(451, 274);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(343, 358);
+            this.panel3.Size = new System.Drawing.Size(363, 386);
             this.panel3.TabIndex = 20;
             // 
             // label13
@@ -278,9 +279,9 @@
             this.panel4.Controls.Add(this.chart2);
             this.panel4.Controls.Add(this.label14);
             this.panel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel4.Location = new System.Drawing.Point(55, 449);
+            this.panel4.Location = new System.Drawing.Point(36, 416);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(377, 229);
+            this.panel4.Size = new System.Drawing.Size(377, 244);
             this.panel4.TabIndex = 20;
             // 
             // chart2
